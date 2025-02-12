@@ -1,9 +1,9 @@
 <!-- <form [formGroup]="formH" (submit)="submit()"> -->
-  <h2 class="mb-4 text-center">Registro de Eventos</h2>
+  <h3 class="mb-4 text-center">Registro de Eventos</h3>
 
   <!-- Datos Sucursal -->
   <div class="mb-3">
-    <label for="empleado" class="form-label">Empleado:</label>
+    <label for="empleado" class="form-label">Empleados:</label>
     <select id="empleado" formControlName="empleado" class="form-select">
       <option value="">Seleccione un empleado</option>
       <!-- @for (empleado of empleados; track empleado.nombre) {
@@ -27,21 +27,20 @@
           <div class="form-check">
             <input type="radio" id="tipoRegistro" value="registro" name="tipo" class="form-check-input"
               formControlName="tipo">
-            <label for="tipoRegistro" class="form-check-label"><i class="bi bi-clipboard-check me-2 bg-primary"></i>
-              Registro
-              Ordinario</label>
+            <label for="tipoRegistro" class="form-check-label"><i class="bi bi-clipboard-check me-2"></i>
+              Log</label>
           </div>
           <div class="form-check">
             <input type="radio" id="tipoIncidencia" value="incidencia" name="tipo" class="form-check-input"
               formControlName="tipo">
             <label for="tipoIncidencia" class="form-check-label"><i
-                class="bi bi-exclamation-triangle me-2 bg-warning"></i>Incidencia</label>
+                class="bi bi-exclamation-triangle me-2 "></i>Warn</label>
           </div>
           <div class="form-check">
             <input type="radio" id="tipoAlerta" name="tipo" value="alerta" class="form-check-input"
               formControlName="tipo">
             <label for="tipoAlerta" class="form-check-label"><i
-                class="bi bi-exclamation-diamond-fill me-2 bg-danger"></i>Alerta</label>
+                class="bi bi-exclamation-diamond-fill me-2"></i>Error</label>
           </div>
         </div>
       </div>
@@ -64,6 +63,10 @@
       <div class="col-md-6 mb-3">
         <label for="nombreC" class="form-label">Nombre:</label>
         <input type="text" id="nombreC" class="form-control" placeholder="Nombre" formControlName="nombreCliente">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="habitacionC" class="form-label">Habitación:</label>
+        <input type="text" id="habitacionC" class="form-control" placeholder="Habitación" formControlName="habitacionCliente">
       </div>
     </div>
     </div>
