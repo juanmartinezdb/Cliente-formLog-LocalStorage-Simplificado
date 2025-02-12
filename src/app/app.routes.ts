@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { FormularioComponent } from './formulario/formulario.component';
-import { ListadoComponent } from './listado/listado.component';
+import { ListadoComponent } from './Components/listado/listado.component';
+import { FormularioComponent } from './Components/formulario/formulario.component';
 
 export const routes: Routes = [
   { path: '', component: FormularioComponent },

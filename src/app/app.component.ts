@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
-import { NavbarComponent } from './navbar/navbar.component';
+import { RouterOutlet } from '@angular/router';
+import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
+import { SideBarComponent } from './Components/side-bar/side-bar.component';
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    imports: [RouterOutlet, RouterModule, NavbarComponent],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.css'
+  selector: 'app-root',
+  imports: [RouterOutlet, NavBarComponent, SideBarComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Log';
+  title = 'logger';
 }
