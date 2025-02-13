@@ -4,8 +4,8 @@
   <div class="row">
     <!-- Listado de registros -->
     <div class="col-md-5">
-      <!-- <ul class="list-group" id="listadoRegistros">
-        @for (reg of registros; track reg.creacion) {
+      <ul class="list-group" id="listadoRegistros">
+        @for (reg of registros; track reg.createdAt) {
         <li class="list-group-item d-flex align-items-center" [class.bg-success]="registroSelect===reg" (click)="mostrarDetalles(reg)">
           @if(reg.categoria=="log") {
           <i class="bi bi-clipboard-check text-primary me-2"></i>
@@ -14,7 +14,7 @@
           } @else {
           <i class="bi bi-exclamation-diamond-fill text-danger me-2"></i>
           }
-          <strong>{{reg.habitacionC}} - {{reg.tituloE}} </strong>
+          <strong>{{reg.cliente.habitacion}} - {{reg.titulo}} </strong>
         </li>
         }
       </ul>
@@ -22,5 +22,5 @@
     <div class="col-md-7">
       <app-datos-registro [registro]="registroSelect"></app-datos-registro>
     </div>
-  </div> -->
+  </div>
 </div>

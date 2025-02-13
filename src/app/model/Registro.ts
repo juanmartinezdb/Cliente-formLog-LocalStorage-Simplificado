@@ -9,5 +9,5 @@ export interface Registro {
   titulo: string;
   descripcion: string;
   categoria: "log"|"warn"|"error";
-  CreatedAt: Date;
+  createdAt: Date;
 }

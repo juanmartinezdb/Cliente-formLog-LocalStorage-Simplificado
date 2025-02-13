@@ -1,4 +1,4 @@
-<!-- <form [formGroup]="formH" (submit)="submit()"> -->
+<form [formGroup]="formH" (submit)="submit()">
   <h3 class="mb-4 text-center">Registro de Eventos</h3>
 
   <!-- Datos Sucursal -->
@@ -6,9 +6,9 @@
     <label for="empleado" class="form-label">Empleados:</label>
     <select id="empleado" formControlName="empleado" class="form-select">
       <option value="">Seleccione un empleado</option>
-      <!-- @for (empleado of empleados; track empleado.nombre) {
+      @for (empleado of empleados; track $index) {
       <option value="{{empleado.id}}">{{empleado.nombre}}</option>
-      } -->
+      }
     </select>
   </div>
 
@@ -17,40 +17,40 @@
     <h5 class="card-title">Datos del Evento</h5>
     <div class="row">
       <div class="col-md-6 mb-3">
-        <label for="fechaE" class="form-label">Fecha:</label>
-        <input type="text" id="fechaE" class="form-control" formControlName="fechaRegistrada" placeholder="Datepicker"
+        <label for="fecha" class="form-label">Fecha:</label>
+        <input type="text" id="fecha" class="form-control" formControlName="fecha" placeholder="Datepicker"
           bsDatepicker>
       </div>
       <div class="mb-3">
         <label class="form-label">Categoría:</label>
         <div class="d-flex gap-3 flex-warp">
           <div class="form-check">
-            <input type="radio" id="tipoRegistro" value="registro" name="tipo" class="form-check-input"
-              formControlName="tipo">
-            <label for="tipoRegistro" class="form-check-label"><i class="bi bi-clipboard-check me-2"></i>
+            <input type="radio" id="categoria" value="log" name="categoria" class="form-check-input"
+              formControlName="categoria">
+            <label for="categoria" class="form-check-label"><i class="bi bi-clipboard-check me-2"></i>
               Log</label>
           </div>
           <div class="form-check">
-            <input type="radio" id="tipoIncidencia" value="incidencia" name="tipo" class="form-check-input"
-              formControlName="tipo">
-            <label for="tipoIncidencia" class="form-check-label"><i
+            <input type="radio" id="warn" value="warn" name="categoria" class="form-check-input"
+              formControlName="categoria">
+            <label for="categoria" class="form-check-label"><i
                 class="bi bi-exclamation-triangle me-2 "></i>Warn</label>
           </div>
           <div class="form-check">
-            <input type="radio" id="tipoAlerta" name="tipo" value="alerta" class="form-check-input"
-              formControlName="tipo">
-            <label for="tipoAlerta" class="form-check-label"><i
+            <input type="radio" id="error" name="categoria" value="error" class="form-check-input"
+              formControlName="categoria">
+            <label for="categoria" class="form-check-label"><i
                 class="bi bi-exclamation-diamond-fill me-2"></i>Error</label>
           </div>
         </div>
       </div>
       <div class="mb-3">
-        <label for="tituloE" class="form-label">Título:</label>
-        <input type="text" id="tituloE" class="form-control" placeholder="Título" formControlName="tituloEvento">
+        <label for="titulo" class="form-label">Título:</label>
+        <input type="text" id="titulo" class="form-control" placeholder="Título" formControlName="titulo">
       </div>
       <div class="mb-3">
-        <label for="descripcionE" class="form-label">Descripción:</label>
-        <textarea id="descripcionE" class="form-control" rows="3" formControlName="descripcionEvento"></textarea>
+        <label for="descripcion" class="form-label">Descripción:</label>
+        <textarea id="descripcion" class="form-control" rows="3" formControlName="descripcion"></textarea>
       </div>
     </div>
     <input type="date" id="createdAt" class="form-control" formControlName="createdAt" hidden>
@@ -61,12 +61,12 @@
     <h5 class="card-title">Datos Cliente</h5>
     <div class="row">
       <div class="col-md-6 mb-3">
-        <label for="nombreC" class="form-label">Nombre:</label>
-        <input type="text" id="nombreC" class="form-control" placeholder="Nombre" formControlName="nombreCliente">
+        <label for="cliente" class="form-label">Nombre:</label>
+        <input type="text" id="cliente" class="form-control" placeholder="Nombre" formControlName="cliente">
       </div>
       <div class="col-md-6 mb-3">
-        <label for="habitacionC" class="form-label">Habitación:</label>
-        <input type="text" id="habitacionC" class="form-control" placeholder="Habitación" formControlName="habitacionCliente">
+        <label for="habitacion" class="form-label">Habitación:</label>
+        <input type="text" id="habitacion" class="form-control" placeholder="Habitación" formControlName="habitacion">
       </div>
     </div>
     </div>
@@ -77,4 +77,4 @@
     <button type="submit" class="btn btn-primary">Registrar Evento</button>
   </div>
 
-<!-- </form> -->
+</form>

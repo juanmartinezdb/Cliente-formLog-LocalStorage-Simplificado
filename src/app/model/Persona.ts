@@ -1,5 +1,4 @@
 export interface Persona {
-  id: number;
     nombre: string;
 }
 
@@ -8,5 +7,6 @@ export interface Cliente extends Persona {
 }
 
 export interface Empleado extends Persona {
-    departamento : string;
+  id: number;
+  departamento : string;
 }
