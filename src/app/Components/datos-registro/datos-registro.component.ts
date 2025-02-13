@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Registro } from '../../model/Registro';
 
 @Component({
   selector: 'app-datos-registro',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './datos-registro.component.css'
 })
 export class DatosRegistroComponent {
+@Input() registro: Registro | null = null;
+
+
 
 }

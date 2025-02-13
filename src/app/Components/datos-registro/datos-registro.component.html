@@ -1,1 +1,23 @@
-<p>datos-registro works!</p>
+@if(registro){
+
+  <div id="detallesEvento-app" class="border rounded p-3">
+    <h5>Detalles del Evento</h5>
+    <p><strong>Titulo:</strong> {{ registro.titulo }}</p>
+    <p><strong>Descripción:</strong> {{ registro.descripcion }}</p>
+    <p><strong>Fecha:</strong> {{ registro.fecha }}</p>
+    <p class="text-muted">Fecha Creación: {{ registro.createdAt }}</p>
+    <hr>
+    <h6>Datos del Empleado</h6>
+    <p><strong>Nombre:</strong> {{registro.empleado.nombre}}</p>
+    <p><strong>Departamento:</strong> {{ registro.empleado.departamento}}</p>
+    <hr>
+    <h6>Datos del Cliente</h6>
+    <p><strong>Nombre:</strong> {{ registro.cliente.nombre }}</p>
+    <p><strong>Habitacion:</strong> {{ registro.cliente.habitacion }}</p>
+    <hr>
+    <button class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> Eliminar</button>
+  </div>
+} @else {
+  <p class="text-muted">Selecciona un registro para ver los detalles.</p>
+
+}
