@@ -11,3 +11,4 @@ export interface Registro {
   categoria: "log"|"warn"|"error";
   createdAt: Date;
 }
+

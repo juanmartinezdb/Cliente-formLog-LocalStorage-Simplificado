@@ -4,7 +4,7 @@
   <!-- Datos Sucursal -->
   <div class="mb-3">
     <label for="empleado" class="form-label">Empleados:</label>
-    <select id="empleado" formControlName="empleado" class="form-select">
+    <select id="empleado" formControlName="empleado" class="form-select" (change)="selectEmpleado()">
       <option value="">Seleccione un empleado</option>
       @for (empleado of empleados; track $index) {
       <option value="{{empleado.id}}">{{empleado.nombre}}</option>

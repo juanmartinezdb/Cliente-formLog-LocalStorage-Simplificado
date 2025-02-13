@@ -3,7 +3,6 @@
 <div class="container">
   <div class="row">
     <!-- Listado de registros -->
-    <div class="col-md-5">
       <ul class="list-group" id="listadoRegistros">
         @for (reg of registros; track reg.createdAt) {
         <li class="list-group-item d-flex align-items-center" [class.bg-success]="registroSelect===reg" (click)="mostrarDetalles(reg)">
@@ -15,12 +14,9 @@
           <i class="bi bi-exclamation-diamond-fill text-danger me-2"></i>
           }
           <strong>{{reg.cliente.habitacion}} - {{reg.titulo}} </strong>
+          <button class="ms-auto badge bg-danger" (click)="borrarRegistro(reg)">Borrar</button>
         </li>
         }
       </ul>
     </div>
-    <div class="col-md-7">
-      <app-datos-registro [registro]="registroSelect"></app-datos-registro>
-    </div>
-  </div>
 </div>

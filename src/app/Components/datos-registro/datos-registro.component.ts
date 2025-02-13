@@ -10,6 +10,4 @@ import { Registro } from '../../model/Registro';
 export class DatosRegistroComponent {
 @Input() registro: Registro | null = null;
 
-
-
 }
