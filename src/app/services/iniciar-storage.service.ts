@@ -14,14 +14,14 @@ iniciarStorage(): void {
   const iniciado = localStorage.getItem('ini');
 
   if (!iniciado){
-    this.http.get<DataJSON>('/public/datos.json').subscribe({
+    this.http.get<DataJSON>('/datos.json').subscribe({
       next: (data) => {
         localStorage.setItem('empleados', JSON.stringify(data.empleados));
         localStorage.setItem('registros', JSON.stringify(data.registros) );
         localStorage.setItem('ini', 'true');
-        console.log('datos iniciacos en localStorage, OK');
+        console.log('datos iniciados en localStorage, OK');
       },
-      error: (err) => console.error('Errora l cargar el JSON', err)
+      error: (err) => console.error('Error al cargar el JSON', err)
     })
   } else {
     console.log('Los datos ya estaban inicializados');
