@@ -1,11 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Empleado } from '../../model/Persona';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, MaxLengthValidator, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Registro } from '../../model/Registro';
 import { CommonModule } from '@angular/common';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BehaviorSubject } from 'rxjs';
 import { DatosService } from '../../services/datos.service';
+import { fechaValida } from '../../validators/fechaValida';
 
 @Component({
   selector: 'app-formulario',
@@ -25,12 +26,12 @@ datosService: DatosService = inject(DatosService);
 constructor (private fb: FormBuilder) {
   this.formH = this.fb.group({
     empleado: ['', [Validators.required]],
-    fecha: ['', [Validators.required]],
+    fecha: ['', [Validators.required, fechaValida()]],
     categoria: ['', [Validators.required]],
-    titulo: ['', [Validators.required]],
-    descripcion: ['', [Validators.required]],
-    cliente: ['', [Validators.required]],
-    habitacion: ['', [Validators.required]],
+    titulo: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
+    descripcion: ['', [Validators.required, Validators.minLength(10)]],
+    cliente: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(50)]],
+    habitacion: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
     createdAt: [new Date()]
   });
 }
@@ -58,7 +59,6 @@ selectEmpleado(){
 
 
 submit() {
-  console.log(this.formH);
 
   if (this.formH.valid) {
     const now = new Date();
@@ -79,6 +79,9 @@ submit() {
     this.datosService.aniadirRegistro(nuevoRegistro);
     console.log("registro agregado");
     console.log(localStorage.getItem('registros'));
+  } else {
+    console.log("registro no valido");
+
   }
 }
 }
