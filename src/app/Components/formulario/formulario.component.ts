@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Empleado } from '../../model/Persona';
-import { FormBuilder, FormGroup, MaxLengthValidator, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Registro } from '../../model/Registro';
 import { CommonModule } from '@angular/common';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';

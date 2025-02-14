@@ -14,6 +14,7 @@ iniciarStorage(): void {
   const iniciado = localStorage.getItem('ini');
 
   if (!iniciado){
+//este metodo del httpClient, sirve tambien para hacer un fetch de una api por ejemplo.
     this.http.get<DataJSON>('/datos.json').subscribe({
       next: (data) => {
         localStorage.setItem('empleados', JSON.stringify(data.empleados));
@@ -21,8 +22,11 @@ iniciarStorage(): void {
         localStorage.setItem('ini', 'true');
         console.log('datos iniciados en localStorage, OK');
       },
-      error: (err) => console.error('Error al cargar el JSON', err)
-    })
+      error: (err) => {
+        console.error('Error al cargar el JSON', err)
+      },
+      complete: () => console.log("listo")
+      })
   } else {
     console.log('Los datos ya estaban inicializados');
   }

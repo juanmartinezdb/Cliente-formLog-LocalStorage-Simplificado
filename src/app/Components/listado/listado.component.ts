@@ -1,11 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Registro } from '../../model/Registro';
-import { DatosRegistroComponent } from '../datos-registro/datos-registro.component';
 import { DatosService } from '../../services/datos.service';
 
 @Component({
   selector: 'app-listado',
-  imports: [DatosRegistroComponent],
+  imports: [],
   templateUrl: './listado.component.html',
   styleUrl: './listado.component.css'
 })
