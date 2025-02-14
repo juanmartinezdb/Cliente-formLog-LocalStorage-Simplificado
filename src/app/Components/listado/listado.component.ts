@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Registro } from '../../model/Registro';
+import { DatosRegistroComponent } from '../datos-registro/datos-registro.component';
 
 @Component({
   selector: 'app-listado',
-  imports: [],
+  imports: [DatosRegistroComponent],
   templateUrl: './listado.component.html',
   styleUrl: './listado.component.css'
 })
