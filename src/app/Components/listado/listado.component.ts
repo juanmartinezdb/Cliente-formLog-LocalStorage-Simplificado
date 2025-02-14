@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Registro } from '../../model/Registro';
 import { DatosRegistroComponent } from '../datos-registro/datos-registro.component';
+import { DatosService } from '../../services/datos.service';
 
 @Component({
   selector: 'app-listado',
@@ -11,14 +12,29 @@ import { DatosRegistroComponent } from '../datos-registro/datos-registro.compone
 export class ListadoComponent implements OnInit {
 registros: Registro[] =  []
 registroSelect: Registro |null = null;
+datosService: DatosService = inject(DatosService);
 
 ngOnInit(): void {
-const registrosstring = localStorage.getItem('registros');
-this.registros = registrosstring ? JSON.parse(registrosstring) as Registro[] : [];
+this.datosService.registros$.subscribe(registros => {
+  this.registros = registros;
+})
 
 }
 
-mostrarDetalles = (registro) => {
+borrarRegistro(reg: Registro){
+  this.datosService.eliminarRegistro(reg.createdAt);
+}
 
+mostrarDetalles = (registro: Registro) => {
+  this.registroSelect = registro;
+const registroSelecto = {
+  categoria: registro?.categoria,
+          fecha: registro?.fecha,
+          titulo: registro?.titulo,
+          descripcion: registro?.descripcion,
+          cliente: registro?.cliente?.nombre,
+          habitacion: registro?.cliente?.habitacion
+}
+this.datosService.actualizarRegistro(registroSelecto);
 }
 }
