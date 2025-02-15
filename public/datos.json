@@ -67,7 +67,7 @@
       "titulo": "Revisión de minibar",
       "descripcion": "Se ha repuesto el minibar con bebidas y snacks.",
       "categoria": "log",
-      "CreatedAt": "2025-02-10T14:30:00Z"
+      "createdAt": "2025-02-10T14:30:00Z"
     },
     {
       "empleado": {
@@ -84,7 +84,7 @@
       "titulo": "Cambio de toallas",
       "descripcion": "Se han cambiado las toallas a petición del huésped.",
       "categoria": "log",
-      "CreatedAt": "2025-02-09T10:00:00Z"
+      "createdAt": "2025-02-09T10:00:00Z"
     },
     {
       "empleado": {
@@ -101,7 +101,7 @@
       "titulo": "Avería en aire acondicionado",
       "descripcion": "El aire acondicionado de la habitación no funciona correctamente.",
       "categoria": "warn",
-      "CreatedAt": "2025-02-08T18:45:00Z"
+      "createdAt": "2025-02-08T18:45:00Z"
     },
     {
       "empleado": {
@@ -118,7 +118,7 @@
       "titulo": "Fuga de agua en baño",
       "descripcion": "Se ha detectado una fuga de agua en el baño de la habitación.",
       "categoria": "warn",
-      "CreatedAt": "2025-02-07T08:20:00Z"
+      "createdAt": "2025-02-07T08:20:00Z"
     },
     {
       "empleado": {
@@ -135,7 +135,7 @@
       "titulo": "Tarjeta de acceso no funciona",
       "descripcion": "El huésped indica que su tarjeta de habitación no abre la puerta.",
       "categoria": "warn",
-      "CreatedAt": "2025-02-06T22:10:00Z"
+      "createdAt": "2025-02-06T22:10:00Z"
     },
     {
       "empleado": {
@@ -152,7 +152,7 @@
       "titulo": "Emergencia médica de huésped",
       "descripcion": "Un huésped requiere asistencia médica urgente en su habitación.",
       "categoria": "error",
-      "CreatedAt": "2025-02-05T03:15:00Z"
+      "createdAt": "2025-02-05T03:15:00Z"
     },
     {
       "empleado": {
@@ -169,7 +169,7 @@
       "titulo": "dfwe45t435",
       "descripcion": "sdgfsrg",
       "categoria": "log",
-      "CreatedAt": "2025-02-10T19:24:50.718Z"
+      "createdAt": "2025-02-10T19:24:50.718Z"
     },
     {
       "empleado": {
@@ -186,7 +186,7 @@
       "titulo": "Cambio de toallas",
       "descripcion": "El huésped ha solicitado un cambio de toallas en su habitación.",
       "categoria": "log",
-      "CreatedAt": "2025-02-11T09:23:01.655Z"
+      "createdAt": "2025-02-11T09:23:01.655Z"
     },
     {
       "empleado": {
@@ -203,7 +203,7 @@
       "titulo": "Fuga de gas detectada",
       "descripcion": "Se ha percibido un fuerte olor a gas en el hotel.",
       "categoria": "error",
-      "CreatedAt": "2025-02-11T09:23:47.577Z"
+      "createdAt": "2025-02-11T09:23:47.577Z"
     },
     {
       "empleado": {
@@ -220,7 +220,7 @@
       "titulo": "Tarjeta de acceso no funciona",
       "descripcion": "El huésped indica que su tarjeta de habitación no abre la puerta.",
       "categoria": "warn",
-      "CreatedAt": "2025-02-11T09:29:47.784Z"
+      "createdAt": "2025-02-11T09:29:47.784Z"
     },
     {
       "empleado": {
@@ -237,7 +237,7 @@
       "titulo": "Fallo en alarma de incendios",
       "descripcion": "El sistema de detección de incendios ha dejado de funcionar.",
       "categoria": "error",
-      "CreatedAt": "2025-02-11T12:13:23.086Z"
+      "createdAt": "2025-02-11T12:13:23.086Z"
     }
   ]
 }

@@ -27,6 +27,9 @@ iniciarStorage(): void {
       },
       complete: () => console.log("listo")
       })
+      setTimeout(function() {
+        window.location.reload();
+      }, 3000); //
   } else {
     console.log('Los datos ya estaban inicializados');
   }

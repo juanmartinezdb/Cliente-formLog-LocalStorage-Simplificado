@@ -33,9 +33,13 @@ cargarRegistros(){
   this.registroSubject.next(registros);
 }
 
-eliminarRegistro(createdAt: Date){
+eliminarRegistro(reg: Registro){
   const registrosActuales = this.registroSubject.getValue() as Registro [];
-  const nuevosRegistros = registrosActuales.filter(r=> r.createdAt!= createdAt);
+
+
+  const nuevosRegistros = registrosActuales.filter(r=> r!= reg);
+
+
 this.registroSubject.next(nuevosRegistros);
 localStorage.setItem('registros', JSON.stringify(nuevosRegistros));
 }

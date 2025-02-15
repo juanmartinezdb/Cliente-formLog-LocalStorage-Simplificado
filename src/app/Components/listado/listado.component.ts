@@ -21,7 +21,7 @@ this.datosService.registros$.subscribe(registros => {
 }
 
 borrarRegistro(reg: Registro){
-  this.datosService.eliminarRegistro(reg.createdAt);
+  this.datosService.eliminarRegistro(reg);
 }
 
 mostrarDetalles = (registro: Registro) => {
