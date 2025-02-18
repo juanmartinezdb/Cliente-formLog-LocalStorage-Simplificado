@@ -9,17 +9,22 @@
 
       <!-- Contador de eventos -->
       <div class="d-flex align-items-center gap-3">
-        <a class="d-flex align-items-center btn">
+        <a class="d-flex align-items-center btn"
+        [routerLink]="['/listado','log']"
+        >
             <i class="bi bi-clipboard-check text-primary fs-4 me-1"></i>
+
             <span class="fw-bold text-primary me-1">{{ log }}</span>
           logs
           </a>
-        <a class="d-flex align-items-center btn">
+        <a class="d-flex align-items-center btn"
+        [routerLink]="['/listado','warn']">
             <i class="bi bi-exclamation-triangle-fill text-warning fs-4 me-1"></i>
             <span class="fw-bold text-warning  me-1">{{ warn }}</span>
             warns
           </a>
-        <a class="d-flex align-items-center btn me-2">
+        <a class="d-flex align-items-center btn me-2"
+        [routerLink]="['/listado','error']">
             <i class="bi bi-exclamation-diamond-fill text-danger fs-4 me-1"></i>
             <span class="fw-bold text-danger  me-1">{{ error }}</span>
              errors

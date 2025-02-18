@@ -4,7 +4,7 @@ import { FormularioComponent } from './Components/formulario/formulario.componen
 
 export const routes: Routes = [
   { path: '', component: FormularioComponent },
-  { path: 'listado', component: ListadoComponent },
   { path: 'listado/:tipo', component: ListadoComponent }, //cambiar luego segun se defina el tipo
+  { path: 'listado', component: ListadoComponent },
   { path: 'formulario', component: FormularioComponent }
 ];

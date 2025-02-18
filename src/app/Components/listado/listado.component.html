@@ -1,3 +1,15 @@
+<div class="container">
+  <nav class="d-flex ,e-2">
+    <label for="filtro">Filtrar por:</label>
+    <select name="filtro" id="filtro" (change)="filtrarSelect($event)">
+      <option value="">Todos</option>
+      <option value="log">Log</option>
+      <option value="warn">Warn</option>
+      <option value="error">error</option>
+    </select>
+  </nav>
+</div>
+
 <h2 class="text-center mb-4">Listado de Registros</h2>
 
 <div class="container">
