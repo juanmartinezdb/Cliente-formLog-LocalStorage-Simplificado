@@ -1,5 +1,5 @@
+import { Empleado } from './../../model/Persona';
 import { Component, inject, OnInit } from '@angular/core';
-import { Empleado } from '../../model/Persona';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Registro } from '../../model/Registro';
 import { CommonModule } from '@angular/common';
@@ -7,6 +7,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BehaviorSubject } from 'rxjs';
 import { DatosService } from '../../services/datos.service';
 import { fechaValida } from '../../validators/fechaValida';
+import { LocalStorageHandlerService } from '../../services/local-storage-handler.service';
+import { HttpEvent } from '@angular/common/http';
 
 @Component({
   selector: 'app-formulario',
@@ -15,6 +17,7 @@ import { fechaValida } from '../../validators/fechaValida';
   styleUrl: './formulario.component.css'
 })
 export class FormularioComponent implements OnInit {
+local = inject(LocalStorageHandlerService);
 empleados : Empleado[] = [];
 registros : Registro[] = [];
 formH!: FormGroup;
@@ -49,7 +52,37 @@ console.log(this.empleados);
   this.formH.valueChanges.subscribe(value => {
     this.datosService.actualizarRegistro(value);
   })
+  this.loadStorage();
+
 }
+
+//Se qe es una catetada, pero funciona, he intentado hacerlo con un event.target y me daba fallos de tipado.
+saveStorage(){
+this.local.set('empleado', this.formH.value.empleado);
+this.local.set('fecha', this.formH.value.fecha);
+this.local.set('categoria', this.formH.value.categoria);
+this.local.set('titulo', this.formH.value.titulo);
+this.local.set('descripcion', this.formH.value.descripcion);
+this.local.set('cliente', this.formH.value.cliente);
+this.local.set('habitacion', this.formH.value.habitacion);
+}
+
+loadStorage(){
+  console.log('Entra');
+console.log(this.local.get('empleado', "" ));
+let form = {
+  empleado: this.local.get('empleado', "" ),
+  fecha : this.local.get('fecha', "" ),
+  categoria: this.local.get('categoria', "" ),
+  titulo : this.local.get('titulo', ""),
+  descripcion : this.local.get('descripcion', ""),
+  cliente : this.local.get('cliente', "" ),
+  habitacion : this.local.get('habitacion', ""),
+  createdAt: ""
+  }
+  this.formH.setValue(form);
+}
+
 
 selectEmpleado(){
     this.datosService.actualizaEmpleado(this.formH.value.empleado);
